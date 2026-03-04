@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --font-family-heading: "Avenir Next", "Avenir", sans-serif;
+  --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family-mono: var(--font-geist-mono);
+
+  /* Brand Palette - Industrial Strategy */
+  --color-brand-primary: #F05A28;
+  --color-brand-primary-dark: #D44B1D;
+  --color-brand-secondary: #1F5D7A;
+  --color-brand-secondary-light: #2A799E;
+  --color-brand-accent: #2F7EA1;
+
+  /* Grayscale Mapping Base (Light Mode Default) */
+  --color-brand-gray-900: #000000;
+  --color-brand-gray-600: #666666;
+  --color-brand-gray-secondary: #6E6F71;
+  --color-brand-gray-muted: #7A7A7A;
+
+  --color-brand-heading: var(--color-brand-gray-900);
+  --color-brand-text: var(--color-brand-gray-600);
+  --color-brand-bg-light: #F4F4F4;
+  --color-brand-bg-white: #FFFFFF;
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: var(--color-brand-bg-white);
+    color: var(--color-brand-text);
+    font-family: var(--font-family-sans);
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--color-brand-heading);
+    font-family: var(--font-family-heading);
+    font-weight: 700;
+  }
+
+  .dark {
+    --color-brand-gray-900: #FFFFFF;
+    --color-brand-gray-600: #B3B3B3;
+    --color-brand-gray-secondary: #C2C3C5;
+    --color-brand-gray-muted: #D0D0D0;
+
+    --color-brand-bg-white: #0A0A0A;
+  }
+
+  .dark body {
+    background-color: var(--color-brand-bg-white);
+    color: var(--color-brand-text);
+  }
+
+  .dark h1,
+  .dark h2,
+  .dark h3,
+  .dark h4,
+  .dark h5,
+  .dark h6 {
+    color: var(--color-brand-heading);
+  }
+}
